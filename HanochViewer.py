@@ -90,7 +90,17 @@ def quit_on_close():
         if event.type == pygame.QUIT:
             pygame.quit()
             quit()
-            
+
+def traduz_comandos(comando):
+    comandos = {
+                'A': 0,
+                'B': 1,
+                'C': 2,
+                '->': 1,
+                '<-': -1
+               }
+    return comandos.get(comando)
+
 def run():
     torres = [Torre(i) for i in range(1, 3 + 1)]
     move_pattern = re.compile("(A|B|C) (->|<-) (A|B|C)")
@@ -104,24 +114,9 @@ def run():
             if m:
                 origem = direcao = destino = 0
                 
-                if m.group(1) == 'A':
-                   origem = 0
-                elif m.group(1) == 'B':
-                    origem = 1
-                else:
-                    origem = 2
-
-                if m.group(2) == '->':
-                   direcao = 1
-                else:
-                   direcao = -1
-                    
-                if m.group(3) == 'A':
-                    destino = 0
-                elif m.group(3) == 'B':
-                    destino = 1
-                else:
-                    destino = 2
+                origem = traduz_comandos(m.group(1))
+                direcao = traduz_comandos(m.group(2))
+                destino = traduz_comandos(m.group(3))
                     
                 if direcao == 1:
                     move_disco(torres[origem],
