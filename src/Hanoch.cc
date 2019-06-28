@@ -17,7 +17,7 @@ int main(int const argc, char *argv[])
 
     int const discos = stoi(argv[1]);
 
-    if (discos > 64)
+    if (discos < 1 || discos > 64)
     {
         cerr << "O número de discos deve ser menor ou igual a 64." << endl;
         return 1;
