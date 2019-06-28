@@ -23,7 +23,7 @@ pip3 install -r requirements.txt
 ./Hanoch [num_discos] | python3 HanochViewer.py
 ```
 
-## Referências:  
+## Referências  
 1. [Tower of Hanoi](https://en.wikipedia.org/wiki/Tower_of_Hanoi)
 2. [How to solve Tower of Hanoi iteratively?](https://cs.stackexchange.com/questions/96624/how-to-solve-tower-of-hanoi-iteratively)
 3. [Como resolver a Torre de Hanói de qualquer tamanho](https://www.youtube.com/watch?v=GUjr_qLXf-k)
